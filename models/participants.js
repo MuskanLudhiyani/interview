@@ -20,15 +20,12 @@ var participantSchema= mongoose.Schema({
               start_time: Date,
               end_time: Date,
             },
-         ]
+         ],
+         default: []
         }	
 
 });
 var participants=module.exports=mongoose.model('participants',participantSchema);
 module.exports.getParticipants = function(callback){
 	return participants.find(callback);
-	
 } 
-module.exports.addParticipant=function(participant,callback){
-	participants.create(participant,callback);
-}
