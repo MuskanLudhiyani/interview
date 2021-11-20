@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var participantSchema= mongoose.Schema({
     id:{
         type:Number,
-        required:true
+        required:true,
+        unique:true
     },
 	name:{
 		type: String,
@@ -12,6 +13,7 @@ var participantSchema= mongoose.Schema({
 	email:{
 		type: String,
         required:true,
+        unique:true
 	
 	},
     dates_occuped:{

@@ -1,5 +1,10 @@
 var mongoose = require('mongoose');
 var meetingSchema= mongoose.Schema({
+    meetingid:{
+        type:Number,
+        required:true,
+        unique:true
+    },
     id1:{
         type:Number,
         required:true

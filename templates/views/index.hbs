@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,8 @@
     {{>navbar}}
     <form action= "/addmeeting"method="post">
     <H1>"Add Meeting"</H1>
+    <label for="meetingid">Insert Meeting ID:</label>
+  <input type="number" id="meetingid" name="meetingid"><br><br>
     <label for="id1">Insert Id of first person:</label>
   <input type="number" id="id1" name="id1"><br><br>
   <label for="id2">Insert Id of second person:</label>
@@ -28,8 +31,17 @@
   <label for="name">Name:</label>
   <input type="string" id="name" name="name"><br><br>
   <label for="email">Email:</label>
-  <input type="rmail" id="email" name="email">
+  <input type="email" id="email" name="email">
   <input type="submit",value="submit">
+</form>
+</form>
+    
+    <form action= "/updatemeeting"method="post">
+    <H1>"Add Participant"</H1>
+    <label for="id">Enter the meeting id you want to update</label>
+  <input type="number" id="id" name="id"><br><br>
+  <input type="submit",value="submit">
+  
 </form>
 
 </body>
