@@ -10,4 +10,4 @@
 
 ## Screenshot
 
-![SS1](https://github.com/MuskanLudhiyani/interview/blob/master/Screenshots/Screenshot%20from%202021-11-20%2016-43-38.png?raw=true)
+![SS1](https://github.com/MuskanLudhiyani/interview/blob/master/Screenshots/Screenshot%20from%202021-11-20%2017-14-37.png?raw=true)
