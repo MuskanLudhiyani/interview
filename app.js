@@ -1,12 +1,25 @@
 const express = require("express")
+const hbs=require("hbs")
 const app = express();
 const mongoose = require("mongoose")
 const Participant = require("./models/participants")
 const Meeting = require("./models/meeting")
+const bodyParser=require("body-parser")
+app.use(bodyParser());
 app.use(express.json())
+const path=require("path");
+const { urlencoded } = require("express");
+const static_path=path.join(__dirname,"./templates/views")
+const hbs_path=path.join(__dirname,"./templates/partials")
+app.use(urlencoded({extended:false}))
+
+app.use(express.json()) 
+app.set("view engine","hbs")
+app.set("views",static_path)
+hbs.registerPartials(hbs_path)
 require("dotenv/config")
 app.get("/",(req,res)=>{
-    res.send("First Request");
+    res.render("index");
 });
 app.get("/meetings",(req,res)=>{
     res.send("Here are the scheduled meetings");
@@ -37,9 +50,7 @@ app.get('/participants', (req,res)=>{
         })}
         catch(error){
             res.send({message:error})
-        }
-          
-         
+        }   
 });  
 //add meetings
 app.post("/addmeeting",async(req,res,next)=>{
@@ -79,7 +90,15 @@ app.post("/addmeeting",async(req,res,next)=>{
         else{
             flag=1;
             firstparticipant=Participant.findOne({id:firstid});
+            if (firstparticipant==null)
+            {
+                res.send("first id doesnot exist");
+            }
             secondparticipant=Participant.findOne({id:secondid});
+            if (secondparticipant==null)
+            {
+                res.send("second id doesnot exist")
+            }
             console.log(flag)
             size1=firstparticipant.dates_occuped==null?0:firstparticipant.dates_occuped.length
             size2=secondparticipant.dates_occuped==null?0:secondparticipant.dates_occuped.length

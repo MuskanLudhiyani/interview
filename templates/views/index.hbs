@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{>navbar}}
+    <form action= "/addmeeting"method="post">
+    <H1>"Add Meeting"</H1>
+    <label for="id1">Insert Id of first person:</label>
+  <input type="number" id="id1" name="id1"><br><br>
+  <label for="id2">Insert Id of second person:</label>
+  <input type="number" id="id2" name="id2"><br><br>
+  <label for="starttime">Start-time (date and time):</label>
+  <input type="datetime-local" id="starttime" name="start_time">
+  <label for="endtime"> End-time(date and time):</label>
+  <input type="datetime-local" id="endtime" name="end_time">
+  <input type="submit",value="submit">
+</form>
+    
+    <form action= "/addparticipant"method="post">
+    <H1>"Add Participant"</H1>
+    <label for="id">Id:</label>
+  <input type="number" id="id" name="id"><br><br>
+  <label for="name">Name:</label>
+  <input type="string" id="name" name="name"><br><br>
+  <label for="email">Email:</label>
+  <input type="rmail" id="email" name="email">
+  <input type="submit",value="submit">
+</form>
+
+</body>
+</html>
